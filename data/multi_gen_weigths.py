@@ -57,7 +57,7 @@ outFileConfig = open("config.h" , "wt")
 # mmv=1
 
 conv_layers = 0
-fc_layers = 1
+fc_layers = 2
 # [kernel_dim, stride, input_precision, ifm_channels, ofm_channels, ifm_dimension, ofm_dimension, activation_precision, expand, simd, pe, w_precision, mmv]
 # [k, s, ip, ifmc, ofmc, ifmd, ofmd, ap, e, simd, pe, wp, mmv]
 conv_params = [
@@ -68,7 +68,8 @@ conv_params = [
 
 fc_params = [
 #	[MatrixW, MatrixH, SIMD, PE, MMV, IP, WP, AP]
-	[64, 64, 8, 8, 1, 8, 1, 8],
+	[32, 64, 16, 8, 1, 8, 1, 8],
+	[64, 64, 16, 8, 1, 8, 1, 8],
 ]
 
 for layer in range(conv_layers):
